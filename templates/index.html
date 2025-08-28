@@ -84,3 +84,18 @@ document.querySelectorAll('.io-section:nth-child(2) .io-grid2 div').forEach((el,
 });
 
 </script>
+
+<script>
+// Klikatelné IO divy
+document.querySelectorAll('div[id^="O_"], div[id^="I_"]').forEach(div => {
+  div.style.cursor = "pointer";
+  div.addEventListener('click', function() {
+    this.classList.toggle('active-io');
+    // Zde můžeš přidat další logiku, např. AJAX požadavek
+    console.log('Kliknuto na:', this.id);
+  });
+});
+</script>
+
+<script src="../static/main_script.js"></script>
+<!-- pro flask -->

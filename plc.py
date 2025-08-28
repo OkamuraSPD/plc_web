@@ -1,6 +1,6 @@
 import json
 import os
-import pycomm3
+from pycomm3 import LogixDriver
 
 DATA_FILE = os.path.join("static", "data.json")
 
@@ -21,8 +21,8 @@ def write_to_plc(post_data):
     #     plc.write(f"Switch_{switch_id}", value)
 
 
-from pycomm3 import LogixDriver
-import json
+
+
 
 class PLC_IO:
     def __init__(self, ip):
