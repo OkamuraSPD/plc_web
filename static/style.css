@@ -1,0 +1,200 @@
+body {
+      background: 
+        linear-gradient(to bottom, #6e6e6e 0%, #4a4a4a 50%, #6e6e6e 100%), /* hlavní přechod */
+        repeating-linear-gradient(
+          90deg, 
+          rgba(255,255,255,0.05) 0px, 
+          rgba(255,255,255,0.05) 1px, 
+          transparent 1px, 
+          transparent 4px
+        );
+      background-blend-mode: overlay;
+      background-color: #7a7a7a;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      padding-inline: 30px;
+      background: linear-gradient(to right, #434343 0%, black 100%);
+      color: #facc15;
+      border-radius: 10px;
+    }
+    .plc-type {
+      text-align: center;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 1% auto; /* místo margin-left: 10% */
+      background: linear-gradient(to right, #434343 0%, black 100%);
+      color: #facc15;
+      width: 90%;
+
+    }
+    .content {
+      display: flex;
+      justify-content: space-between;
+      padding: 2%;
+      border-radius: 10px;
+      width: 80%;
+      margin: 1% auto; /* místo margin-left: 10% */
+      height: 70%;
+      background-image: linear-gradient(to right, #434343 0%, black 100%);
+      color: #facc15;
+    }
+
+    .left-controls {
+      display: flex;
+      flex-direction: column;   /* prvky pod sebe */
+      align-items: center;      /* zarovnání na střed */
+      gap: 15px;                /* mezera mezi prvky */
+      border-radius: 10px;
+      padding: 15px;
+      width: 20%;
+      height: auto;             /* už nemusí být pevná výška */
+    }
+
+    .circle {
+      width: 40px;
+      height: 40px;
+      background: #32CD32;
+      border-radius: 50%;
+      box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+
+    .input {
+      display: flex;
+      width: 100%;
+      gap: 10px;
+      flex-direction: column;  /* 🔥 prvek pod sebe */
+    }
+
+    .input input {
+      flex: 1;
+      padding: 1.2vh 1vw;
+      font-size: 1.1rem;
+      border: 0.2vh solid #facc15;
+      border-radius: 0.6vh;
+      background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%),
+                  linear-gradient(to top, rgba(255,255,255,0.20) 0%, rgba(0,0,0,0.25) 200%);
+      color: #facc15;
+      font-family: 'Courier New', Courier, monospace;
+      outline: none;
+      box-shadow: 0 0 1vh rgba(0,0,0,0.5) inset;
+      transition: all 0.3s ease;
+    }
+    .input input[type=number]::-webkit-outer-spin-button,
+    .input input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    .input button {
+      flex-shrink: 0;
+      padding: 1.2vh 1.5vw;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 0.6vh;
+      background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%),
+                  linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+      color: #facc15;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .input button:hover {
+      background: linear-gradient(to bottom, #3F3F3F 0%, #5A5A5A 40%, #2C2C2C 150%),
+                  linear-gradient(to top, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.35) 200%);
+      transform: scale(1.05);
+    }
+
+    .restart-btn {
+      flex-shrink: 0;
+      border-radius: 0.6vh;
+      padding: 1.2vh 1.5vw;
+      text-align: center;
+      background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%),
+                  linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+      color: #facc15;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 80%;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .restart-btn:hover {
+      background: linear-gradient(to bottom, #3F3F3F 0%, #5A5A5A 40%, #2C2C2C 150%),
+                  linear-gradient(to top, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.35) 200%);
+      transform: scale(1.05);
+    }
+    .io-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px; /* mezera pod každým blokem (pokud budou stacked) */
+    }
+    .io-title {
+      border-radius: 10px;
+      padding: 5px 20px;
+      margin-bottom: 10px;
+    }
+    .io-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+
+    }
+    .io-grid1 div {
+      width: 45px;
+      height: 45px;
+      background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+      border-radius: 5px;
+      margin-bottom: 10%;
+    }
+    .io-grid2 div {
+      width: 45px;
+      height: 45px;
+      background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);
+      border-radius: 5px;
+      margin-bottom: 10%;
+    }
+    .io-grid1 div,
+    .io-grid2 div {
+      position: relative; /* aby se tooltip držel u každého čtverečku */
+    }
+
+    .io-grid1 div::after,
+    .io-grid2 div::after {
+      content: attr(data-id);
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%),
+                  linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+      background-blend-mode: multiply;
+      color: #facc15;
+      padding: 4px 8px;
+      border-radius: 5px;
+      white-space: nowrap;
+      font-size: 12px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      z-index: 999;
+    }
+
+    .io-grid1 div:hover::after,
+    .io-grid2 div:hover::after {
+      opacity: 1;
+    }
+
+    .right-section {
+      display: flex;
+      gap: 40px;   /* větší mezera mezi sekcemi */
+      margin-right: 15%;
+      width: 26%;
+    }

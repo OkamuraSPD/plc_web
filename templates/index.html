@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PLC UI</title>
+  <link rel="stylesheet" href="../static/style.css">
+  <!-- pro flask -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+  <div class="header">
+    <div><H2>User</H2></div>
+    <div><h1>PinMaster</h1></div>
+    <div><H2>Time</H2></div>
+  </div>
+  <div class="plc-type">Typ PLC:</div>
+  <div class="content">
+    <div class="left-controls">
+      <div class="circle"></div>
+
+      <form class="input" action="/set_ip" method="POST">
+        <input type="number" id="plc_ip" name="plc_ip" placeholder="PLC IP" required>
+        <button type="submit" id="EnterIP">Enter IP</button>
+      </form>
+
+      <div class="restart-btn">Restart</div>
+    </div>
+    <div class="right-section">
+      <div class="io-section">
+        <div class="io-title">Input</div>
+        <div class="io-grid">
+            <div class="io-grid1">
+                <div id="I_0"></div><div id="I_4"></div>
+                <div id="I_1"></div><div id="I_5"></div>
+                <div id="I_2"></div><div id="I_6"></div>
+                <div id="I_3"></div><div id="I_7"></div>
+            </div>
+            <div class="io-grid2">
+                <div id="I_8"></div><div id="I_12"></div>
+                <div id="I_9"></div><div id="I_13"></div>
+                <div id="I_10"></div><div id="I_14"></div>
+                <div id="I_11"></div><div id="I_15"></div>
+            </div>
+        </div>
+      </div>
+      <div class="io-section">
+        <div class="io-title">Output</div>
+        <div class="io-grid">
+            <div class="io-grid1">
+                <div id="O_0"></div><div id="O_4"></div>
+                <div id="O_1"></div><div id="O_5"></div>
+                <div id="O_2"></div><div id="O_6"></div>
+                <div id="O_3"></div><div id="O_7"></div>
+            </div>
+            <div class="io-grid2">
+                <div id="O_8"></div><div id="O_12"></div>
+                <div id="O_9"></div><div id="O_13"></div>
+                <div id="O_10"></div><div id="O_14"></div>
+                <div id="O_11"></div><div id="O_15"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+// Inputy
+document.querySelectorAll('.io-grid1 div').forEach((el, index) => {
+  el.setAttribute('data-id', `I_${index}`);
+});
+document.querySelectorAll('.io-grid2 div').forEach((el, index) => {
+  el.setAttribute('data-id', `I_${index + 8}`);
+});
+
+// Outputy
+document.querySelectorAll('.io-section:nth-child(2) .io-grid1 div').forEach((el, index) => {
+  el.setAttribute('data-id', `O_${index}`);
+});
+document.querySelectorAll('.io-section:nth-child(2) .io-grid2 div').forEach((el, index) => {
+  el.setAttribute('data-id', `O_${index + 8}`);
+});
+
+</script>
